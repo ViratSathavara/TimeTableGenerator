@@ -13,6 +13,7 @@ repositories {
 ext {
   junitVersion = '5.9.1'
   mySqlVerison = '8.0.33'
+  json = '20230227'
 }
 
 sourceCompatibility = '1.8'
@@ -28,6 +29,7 @@ dependencies {
   implementation 'org.glassfish.jersey.inject:jersey-hk2:2.33'
 
   implementation "com.mysql:mysql-connector-j:$mySqlVerison"
+  implementation "org.json:json:$json"
 
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")

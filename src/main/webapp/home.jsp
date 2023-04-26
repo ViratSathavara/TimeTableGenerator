@@ -13,12 +13,10 @@
     String contextPath = request.getContextPath();
 %>
 <html>
-
 <head>
-
     <title>Home</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="<%=contextPath%>/UI/css/utils.css">
+    <jsp:include page="commonJsCss.jsp"></jsp:include>
 </head>
 <body>
 
