@@ -38,67 +38,19 @@
 </div>
 
 
-
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+    <div class="carousel-indicators" id="bannerSliderButtons">
+
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <h1>heading 1</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 2</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 3</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 4</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 5</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 6</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 7</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 8</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 9</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
-        <div class="carousel-item">
-            <h1>heading 10</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta dolores ducimus earum est excepturi hic, incidunt ipsum iure labore molestias officia possimus praesentium quas quibusdam temporibus tenetur vel veritatis voluptatum. Adipisci, atque, culpa debitis deleniti dolorum et eum facere illum minima numquam pariatur quod ratione repellat reprehenderit voluptas.</p>
-        </div>
+    <div class="carousel-inner" id="bannerSlider">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -109,15 +61,41 @@
 </div>
 
 
-<img src="a.jpg" id="mainImage_1" class="main-image" style="width: 100vw; height: 50vh;" >
-<img src="b.jpg" id="mainImage_2" class="main-image" style="width: 100vw; height: 50vh;" >
-<img src="c.jpg" id="mainImage_3" class="main-image" style="width: 100vw; height: 50vh;" >
-<img src="d.jpg" id="mainImage_4" class="main-image" style="width: 100vw; height: 50vh;" >
+<img src="a.jpg" id="mainImage_1" class="main-image" style="width: 100vw; height: 50vh;">
+<img src="b.jpg" id="mainImage_2" class="main-image" style="width: 100vw; height: 50vh;">
+<img src="c.jpg" id="mainImage_3" class="main-image" style="width: 100vw; height: 50vh;">
+<img src="d.jpg" id="mainImage_4" class="main-image" style="width: 100vw; height: 50vh;">
 <button onclick="changeImage()" style="margin-top: 20px; padding: 10px; width: 100px;">next</button>
 <script>
     var contextPath = "<%=contextPath%>/"
     $('.main-image').hide();
     $('#mainImage_1').fadeIn();
+    let url = `\${contextPath}rest/general/getBannerData?ispublished=1`;
+    $.get(url, {}, function (resp) {
+        getBannersHtml(JSON.parse(resp));
+    });
+
+    var getBannersHtml = function (dataArray) {
+        let mainHtml = '';
+        let buttonHtml = '';
+        for (let i = 0; i < dataArray.length; i++) {
+            let active = i==0 ? "active" : ""
+            buttonHtml += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="\${i}" class="\${active}" aria-current="true" aria-label="Slide \${i}"></button>`
+            mainHtml += getSingleBannersHtml(dataArray[i],i==0)
+        }
+        $('#bannerSliderButtons').html(buttonHtml);
+        $('#bannerSlider').html(mainHtml);
+    }
+    var getSingleBannersHtml = function (dataObj,isFirst) {
+        console.log(dataObj);
+        let active = isFirst ? "active" : "";
+        let html = ``;
+        html += `<div class="carousel-item \${active} myBanner_\${dataObj.id}">`;
+        html += `    <h1>\${dataObj.title}</h1>`;
+        html += `    <p>\${dataObj.description}</p>`;
+        html += `</div>`;
+        return html;
+    }
 </script>
 <script src="<%=contextPath%>/UI/js/utils.js"></script>
 <script>
@@ -156,6 +134,7 @@
             ]
         }
     }
+
     function createTable(singleTimeTable) {
         let breakLbl = 'Break';
         let emptyLabel = '--';
@@ -213,14 +192,13 @@
     $("#dynamicTable").empty().html(createTable(demoTimeTable));
 
 
-
     var myImage = document.getElementById('mainImage');
-    var imageAray = ["a.jpg","b.jpg","c.jpg","d.jpg"];
+    var imageAray = ["a.jpg", "b.jpg", "c.jpg", "d.jpg"];
     var imageIndex = 1;
 
-    function changeImage(){
+    function changeImage() {
         $('.main-image').fadeOut();
-        $(`#mainImage_\${imageIndex}`).fadeIn();
+        $(`#mainImage_ \${imageIndex}`).fadeIn();
         imageIndex++;
         if (imageIndex > 4) {
             imageIndex = 1;

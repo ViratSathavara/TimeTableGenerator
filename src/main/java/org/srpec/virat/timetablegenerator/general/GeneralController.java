@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 
 @Path("general")
@@ -13,21 +14,29 @@ public class GeneralController {
     @Path("getData")
     public Response getData(){
         JSONArray jso = new JSONArray();
-        try (DBConnection ds = new DBConnection(true)){
-            String SQL  = " SELECT * FROM SLOTS WHERE CLASS = ? ";
+        return Utils.getResponse(jso.toString(),Response.Status.OK);
+    }
 
+    @GET
+    @Path("getBannerData")
+    public Response getBannerData(@QueryParam("ispublished") String ispublished){
+        JSONArray jsonArray = new JSONArray();
+        StringBuilder getBannerDataSQL = new StringBuilder();
+        getBannerDataSQL.append(" SELECT ");
+        getBannerDataSQL.append(" `id` , ");
+        getBannerDataSQL.append(" `title`, ");
+        getBannerDataSQL.append(" `description`, ");
+        getBannerDataSQL.append(" `createdon` ");
+        getBannerDataSQL.append(" FROM banner_master ");
+        getBannerDataSQL.append(" WHERE delflag = 0 ");
+        if ("1".equalsIgnoreCase(ispublished)){
+            getBannerDataSQL.append(" AND ispublished = 1 ");
+        }
+        try(DBConnection db = new DBConnection(true)) {
+            jsonArray = db.getJsonFromDB(getBannerDataSQL,"");
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        for (int i = 0; i < 10; i++) {
-            JSONObject data = new JSONObject();
-            data.put("id","my_id_"+i);
-            data.put("name","my_Name_"+i);
-            data.put("age","my_age_"+i);
-            data.put("EnrollmentNo","my_Enrollment_"+i);
-            jso.put(data);
-        }
-        return Utils.getResponse(jso.toString(),Response.Status.OK);
+        return Utils.getResponse(jsonArray.toString(),Response.Status.OK);
     }
 }
