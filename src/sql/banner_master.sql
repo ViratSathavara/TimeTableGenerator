@@ -16,7 +16,6 @@ CREATE TABLE `banner_master` (
 );
 
 
-
 -- Do Not Execute on Prod - Only Testing Queries
 INSERT INTO banner_master SET title = "test title 1",description = "test description 1 - TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST ",createdby =1,modifedby =  1, ispublished = 1;
 INSERT INTO banner_master SET title = "test title 2",description = "test description 2 - TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST ",createdby =1,modifedby =  1, ispublished = 1;
