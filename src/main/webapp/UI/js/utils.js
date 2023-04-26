@@ -1,43 +1,57 @@
-let data = ['Ram', 'Shyam', 'Sita', 'Gita' ];
 
+// ################################ IMP CODE ################################
+var utils = function () {
+}
 
-let list = document.getElementById("myList");
+utils.safeValue = function (val, safeVal) {
+    if (val === undefined) {
+        return safeVal;
+    }
+    if (val === `undefined`) {
+        return safeVal;
+    }
+    if (val === `null`) {
+        return safeVal;
+    }
+    if (val === null) {
+        return safeVal;
+    }
+    return val;
+}
 
-data.forEach((item)=>{
-    let li = document.createElement("li");
-    li.innerText = item;
-    list.appendChild(li);
-})
+utils.safeValueStr = function (val, safeVal) {
+    let _val = utils.safeValue(val, safeVal);
+    if (val === '') {
+        return safeVal;
+    }
+    if (val.trim() === '') {
+        return safeVal;
+    }
+    return (_val).trim();
+}
 
-function funCall(myArray){
-    var html = "<table border ='1|1'>"
-        for (var i = 0;i<myArray.length;i++) {
-            html += '<tr>';
-            html += '<td>' +myArray[i].id+'</td>';
-            html += '<td>'+myArray[i].name+'</td>';
-            html += '<td>' +myArray[i].age+'</td>';
-            html += '<td>' +myArray[i].EnrollmentNo+'</td>';
-            html += '</tr>';
+utils.safeValueInt = function (val, safeVal) {
+    let _val = utils.safeValue(val, safeVal);
+    try {
+        _val = parseInt(_val);
+        if (_val == NaN) {
+            return safeVal;
         }
-    document.getElementById("Table").innerHTML = html
+        return _val;
+    } catch (e) {
+        return safeVal;
+    }
 }
-
-
-
-var branch = [
-    'computer engineering','civil engineering','mechanical engineering','electrical engineering','Chemical engineering','Interdisciplinary'
-]
-var option = "";
-for (var i=0;i<branch.length;i++)
-{
-option += '<option value="'+branch[i] +'">' + branch[i] +  "</option>>"
+utils.safeValueFloat = function (val, safeVal) {
+    let _val = utils.safeValue(val, safeVal);
+    try {
+        _val = parseFloat(_val);
+        if (_val == NaN) {
+            return safeVal;
+        }
+        return _val;
+    } catch (e) {
+        return safeVal;
+    }
 }
-document.getElementById('branch').innerHTML = option;
-
-
-$(document).ready(function () {
-    let url = contextPath +"rest/general/getData";
-    $.get(url,{},function (resp) {
-        funCall(JSON.parse(resp));
-    })
-})
+// ################################ IMP CODE ################################

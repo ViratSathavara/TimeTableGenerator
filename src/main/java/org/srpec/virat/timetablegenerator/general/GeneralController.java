@@ -13,6 +13,13 @@ public class GeneralController {
     @Path("getData")
     public Response getData(){
         JSONArray jso = new JSONArray();
+        try (DBConnection ds = new DBConnection(true)){
+            String SQL  = " SELECT * FROM SLOTS WHERE CLASS = ? ";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         for (int i = 0; i < 10; i++) {
             JSONObject data = new JSONObject();
             data.put("id","my_id_"+i);

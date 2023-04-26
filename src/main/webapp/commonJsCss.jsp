@@ -10,5 +10,7 @@
     String contextPath = request.getContextPath();
 %>
 <script src="<%=contextPath%>/UI/libs/Jquery/jquery-3.6.4.min.js"></script>
+<script src="<%=contextPath%>/UI/libs/bootstrap5/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<%=contextPath%>/UI/libs/bootstrap5/bootstarp.min.css">
 
 
