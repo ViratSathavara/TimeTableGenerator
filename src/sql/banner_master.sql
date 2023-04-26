@@ -8,7 +8,7 @@ CREATE TABLE `banner_master` (
 	`modifedby` INT,
 	`modifiedon` DATETIME DEFAULT CURRENT_TIMESTAMP,
 	`delflag` INT DEFAULT '0',
-	KEY `ix_id` (`title`) USING BTREE,
+	KEY `ix_id` (`id`) USING BTREE,
     KEY `ix_title` (`title`) USING BTREE,
     KEY `ix_delflag` (`delflag`) USING BTREE,
     KEY `ix_createdby` (`createdby`) USING BTREE,
