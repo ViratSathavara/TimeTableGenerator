@@ -54,7 +54,7 @@ public class DBConnection implements AutoCloseable {
             ResultSetMetaData rsmd = myRs.getMetaData();
             JSONObject jsonObject = new JSONObject();
             int colCount = rsmd.getColumnCount();
-            while(myRs.next()){
+            while (myRs.next()) {
                 for (int i = 1; i <= colCount; i++) {
                     String columnLabel = rsmd.getColumnLabel(i);
                     String value = String.valueOf(myRs.getObject(i));
@@ -87,4 +87,9 @@ public class DBConnection implements AutoCloseable {
             con.close();
         }
     }
+
+    public static String getDBPropertyValue(String key, String safeValue) {
+        return dbProps.getOrDefault(key, safeValue);
+    }
 }
+

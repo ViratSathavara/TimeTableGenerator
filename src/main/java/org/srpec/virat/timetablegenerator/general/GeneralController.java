@@ -3,13 +3,21 @@ package org.srpec.virat.timetablegenerator.general;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 @Path("general")
 public class GeneralController {
+
+    @Context
+    HttpServletRequest request;
+    @Context
+    HttpServletResponse response;
     
     @GET
     @Path("getBannerData")

@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>Jersey Servlet</servlet-name>
-            <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>org.srpec.virat.timetablegenerator</param-value>
@@ -26,6 +26,23 @@
     <servlet-mapping>
         <servlet-name>Home</servlet-name>
         <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Admin_Dashboard</servlet-name>
+        <jsp-file>/admin/dashboard.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Admin_Dashboard</servlet-name>
+        <url-pattern>/admin/Dashboard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Login_page</servlet-name>
+        <jsp-file>/admin/LoginPage.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login_page</servlet-name>
+        <url-pattern>/LoginPage</url-pattern>
     </servlet-mapping>
 
 

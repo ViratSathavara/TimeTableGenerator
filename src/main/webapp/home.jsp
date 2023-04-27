@@ -16,8 +16,6 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="<%=contextPath%>/UI/css/utils.css">
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <jsp:include page="commonJsCss.jsp"></jsp:include>
 </head>
 <body>
@@ -33,7 +31,7 @@
         </div>
     </div>
     <div class="right-menu">
-        <button type="submit">Login/Sign-Up</button>
+        <a href="<%=contextPath%>/LoginPage">Login</a>
     </div>
 </div>
 
