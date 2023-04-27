@@ -61,15 +61,8 @@
 </div>
 
 
-<img src="a.jpg" id="mainImage_1" class="main-image" style="width: 100vw; height: 50vh;">
-<img src="b.jpg" id="mainImage_2" class="main-image" style="width: 100vw; height: 50vh;">
-<img src="c.jpg" id="mainImage_3" class="main-image" style="width: 100vw; height: 50vh;">
-<img src="d.jpg" id="mainImage_4" class="main-image" style="width: 100vw; height: 50vh;">
-<button onclick="changeImage()" style="margin-top: 20px; padding: 10px; width: 100px;">next</button>
 <script>
     var contextPath = "<%=contextPath%>/"
-    $('.main-image').hide();
-    $('#mainImage_1').fadeIn();
     let url = `\${contextPath}rest/general/getBannerData?ispublished=1`;
     $.get(url, {}, function (resp) {
         getBannersHtml(JSON.parse(resp));
@@ -192,18 +185,7 @@
     $("#dynamicTable").empty().html(createTable(demoTimeTable));
 
 
-    var myImage = document.getElementById('mainImage');
-    var imageAray = ["a.jpg", "b.jpg", "c.jpg", "d.jpg"];
-    var imageIndex = 1;
 
-    function changeImage() {
-        $('.main-image').fadeOut();
-        $(`#mainImage_ \${imageIndex}`).fadeIn();
-        imageIndex++;
-        if (imageIndex > 4) {
-            imageIndex = 1;
-        }
-    }
 
 </script>
 </body>

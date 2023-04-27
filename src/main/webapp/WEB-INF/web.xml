@@ -20,12 +20,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>sessionExpiredServlet</servlet-name>
-        <jsp-file>/sessionExpired.jsp</jsp-file>
+        <servlet-name>Home</servlet-name>
+        <jsp-file>/home.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>sessionExpiredServlet</servlet-name>
-        <url-pattern>/sessionExpired</url-pattern>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
     </servlet-mapping>
 
 

@@ -17,21 +17,25 @@ public class SessionFilter implements Filter {
 
     static {
         sessionLessURLSet.add("rest/login");
-        sessionLessURLSet.add("/sessionExpired");
         sessionLessURLSet.add("index.jsp");
-        sessionLessURLSet.add("home.jsp");
+        sessionLessURLSet.add("/Home");
     }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest)req;
-        HttpServletResponse response = (HttpServletResponse)res;
+        HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) res;
         String requestURI = request.getRequestURI();
         HttpSession session = request.getSession();
-        chain.doFilter(req,res);
+        if (checkSessionLessURIs(requestURI) || "/TimeTableGenerator/".equalsIgnoreCase(requestURI)) {
+            chain.doFilter(req, res);
+        } else {
+            AuthHelper.invalidateSession(request, response);
+        }
+
     }
 
-    public static boolean checkSessionLessURIs(String requestURI){
+    public static boolean checkSessionLessURIs(String requestURI) {
         boolean flag = true;
         for (String sessionLessURL : sessionLessURLSet) {
             flag = flag && requestURI.contains(sessionLessURL);
@@ -43,6 +47,7 @@ public class SessionFilter implements Filter {
     public void init(FilterConfig filterConfig) {
         System.out.println("init");
     }
+
     @Override
     public void destroy() {
         System.out.println("destroy");
