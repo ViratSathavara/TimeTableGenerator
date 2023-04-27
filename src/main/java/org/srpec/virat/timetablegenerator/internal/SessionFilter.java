@@ -15,23 +15,30 @@ public class SessionFilter implements Filter {
 
     private static final HashSet<String> sessionLessURLSet = new HashSet<>();
 
-    static {
-        sessionLessURLSet.add("rest/login");
-        sessionLessURLSet.add("index.jsp");
-        sessionLessURLSet.add("/Home");
-    }
-
+    
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         String requestURI = request.getRequestURI();
         HttpSession session = request.getSession();
-        if (checkSessionLessURIs(requestURI) || "/TimeTableGenerator/".equalsIgnoreCase(requestURI)) {
+        int uid = Utils.safeInt(session.getAttribute("uid"),-1)
+        if(uid > 0) {
+            chain.doFilter(req,res);
+        } else {
+            if ("/TimeTableGenerator/".equalsIgnoreCase(requestURI)
+        || requestURI.contains("/Home")
+        || requestURI.contains("rest/Login")
+        || requestURI.contains("rest/Logout")
+        || requestURI.contains("rest/authorize")
+        || requestURI.contains("rest/general/getBannerData")
+        ) {
             chain.doFilter(req, res);
         } else {
             AuthHelper.invalidateSession(request, response);
         }
+        }
+        
 
     }
 

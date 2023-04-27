@@ -10,13 +10,7 @@ import javax.ws.rs.core.Response;
 
 @Path("general")
 public class GeneralController {
-    @GET
-    @Path("getData")
-    public Response getData(){
-        JSONArray jso = new JSONArray();
-        return Utils.getResponse(jso.toString(),Response.Status.OK);
-    }
-
+    
     @GET
     @Path("getBannerData")
     public Response getBannerData(@QueryParam("ispublished") String ispublished){
