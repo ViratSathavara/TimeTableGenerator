@@ -33,12 +33,24 @@ public class LoginController {
                 return "success";
             } else {
                 response.sendRedirect(request.getContextPath() + "/Home");
-                return "success";
+                return "denided";
             }
-        }
-       catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            return  e.getMessage();
+            return e.getMessage();
+        }
+
+    }
+
+    @GET
+    @Path("Logout")
+    public String Logout() {
+        try {
+            AuthHelper.invalidateSession(request, response);
+            return "success";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return e.getMessage();
         }
     }
 }
