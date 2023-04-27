@@ -14,8 +14,12 @@
 <html>
 <head>
     <title>Admin Dashboard</title>
+
+
+    <jsp:include page="../commonJsCss.jsp"></jsp:include>
+
 </head>
 <body>
-<a href="<%=contextPath%>/rest/LoginController/Logout">Logout</a>
+<a href="<%=contextPath%>/rest/LoginController/Logout" class="btn btn-danger">Logout</a>
 </body>
 </html>

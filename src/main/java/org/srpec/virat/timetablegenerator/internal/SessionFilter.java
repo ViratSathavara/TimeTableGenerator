@@ -27,6 +27,7 @@ public class SessionFilter implements Filter {
             if ("/TimeTableGenerator/".equalsIgnoreCase(requestURI)
                     || requestURI.contains("/Home")
                     || requestURI.contains("/TimeTableGenerator/LoginPage")
+                    || requestURI.contains("/TimeTableGenerator/commonJsCss.jsp")
                     || requestURI.contains("rest/LoginController/Login")
                     || requestURI.contains("rest/LoginController/Logout")
                     || requestURI.contains("rest/general/getBannerData")
