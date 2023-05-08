@@ -1,16 +1,25 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Virat Sathavara
-  Date: 07-05-2023
-  Time: 03:19 pm
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
-</html>
+<style>
+    .table-title {
+        font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        font-size: 1.5rem;
+    }
+    .table-main-parent{
+        width: 99%;
+        height: 94vh;
+    }
+</style>
+<div class="table-main-parent">
+    <div class="table-top">
+        <div class="table-title">Time Table Management</div>
+        <div class="table-search-container">
+            <div class="table-search"></div>
+            <div class="add-btn"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var Banner = function () {
+
+    }
+
+</script>
