@@ -31,7 +31,9 @@
     text-align: center;
 }
 
-
+#main-table {
+    width: 100vw;
+}
 
 .navigation {
     border: 2px solid red;
@@ -64,8 +66,10 @@ width: auto;
     align-items: center;
 justify-content: center;
     float: right;
-
+    margin-top: 25px;
 }
+
+
 
 .heading .title {
     font-size: 40px;

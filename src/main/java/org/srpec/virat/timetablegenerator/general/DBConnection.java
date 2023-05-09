@@ -10,6 +10,11 @@ import java.util.ResourceBundle;
 public class DBConnection implements AutoCloseable {
     private static final HashMap<String, String> dbProps;
     private static final String driverClass = "com.mysql.cj.jdbc.Driver";
+
+    public Connection getCon() {
+        return con;
+    }
+
     private Connection con;
 
     static {
@@ -75,7 +80,7 @@ public class DBConnection implements AutoCloseable {
     public PreparedStatement prepareStatement(String Sql, Object... values) throws Exception {
         PreparedStatement ps = con.prepareStatement(Sql);
         for (int i = 0; i < values.length; i++) {
-            ps.setObject(i, values[i]);
+            ps.setObject(i+1, values[i]);
         }
         System.out.println(ps.toString());
         return ps;
@@ -92,4 +97,5 @@ public class DBConnection implements AutoCloseable {
         return dbProps.getOrDefault(key, safeValue);
     }
 }
+
 

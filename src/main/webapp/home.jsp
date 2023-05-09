@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="right-menu">
-        <a href="<%=contextPath%>/LoginPage">Login</a>
+        <a href="<%=contextPath%>/LoginPage" style="border: 2px solid black; padding: 10px; border-radius: 10px; background-color: #0a53be;color: white">Login</a>
     </div>
 </div>
 
@@ -130,7 +130,7 @@
         let breakLbl = 'Break';
         let emptyLabel = '--';
         let html = ``;
-        html += `<table class="marker">`;
+        html += `<table id="main-table" class="marker">`;
         html += `    <tr class="marker">`;
         html += `        <th class="marker">Time/Days</th>`;
         html += `        <th class="marker">Monday</th>`;

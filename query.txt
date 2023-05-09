@@ -1,0 +1,1 @@
+UPDATE banner_master SET delflag=0 WHERE id > 0 limit 10000;

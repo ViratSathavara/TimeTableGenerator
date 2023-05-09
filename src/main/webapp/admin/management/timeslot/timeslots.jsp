@@ -1,11 +1,9 @@
 <style>
-.main-class-container {
-    background-color: #0a53be;
-}
+
 </style>
 
 <div class="main-class-container">
-    <div>Classes</div>
+    <div>Time Slots</div>
 </div>
 
 <script>
