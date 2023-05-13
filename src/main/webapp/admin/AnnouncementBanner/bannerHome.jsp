@@ -96,7 +96,7 @@
         <div class="banner-title">Announcement Banner Management</div>
         <div class="banner-search-container">
             <div class="banner-search">
-                <input class="form-control search-input me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control search-input me-2" id="search-input" type="search" placeholder="Search" aria-label="Search">
                 <button class="banner-search-btn btn btn-outline-success"><i class="fa fa-search"
                                                                              aria-hidden="true"></i> Search
                 </button>

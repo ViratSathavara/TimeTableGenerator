@@ -57,9 +57,9 @@ public class DBConnection implements AutoCloseable {
         JSONArray jsonArray = new JSONArray();
         try (ResultSet myRs = selectFromDataBase(SQL, values)) {
             ResultSetMetaData rsmd = myRs.getMetaData();
-            JSONObject jsonObject = new JSONObject();
             int colCount = rsmd.getColumnCount();
             while (myRs.next()) {
+                JSONObject jsonObject = new JSONObject();
                 for (int i = 1; i <= colCount; i++) {
                     String columnLabel = rsmd.getColumnLabel(i);
                     String value = String.valueOf(myRs.getObject(i));

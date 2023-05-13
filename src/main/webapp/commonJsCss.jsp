@@ -10,6 +10,8 @@
     String contextPath = request.getContextPath();
 %>
 <script src="<%=contextPath%>/UI/libs/Jquery/jquery-3.6.4.min.js"></script>
+<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="<%=contextPath%>/UI/libs/boostarap-dialog/bootstrap-dialog.min.js" defer></script>
 <script src="<%=contextPath%>/UI/libs/bootstrap-multiselect/bootstrap-multiselect.min.js" defer></script>
@@ -30,3 +32,4 @@
 
 <%--FONT AWESOME SECTION--%>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="<%=contextPath%>/UI/js/utils.js"></script>
