@@ -91,6 +91,10 @@
     }
 
 </style>
+
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <div class="banner-main-parent">
     <div class="banner-top">
         <div class="banner-title">Announcement Banner Management</div>
@@ -101,7 +105,7 @@
                                                                              aria-hidden="true"></i> Search
                 </button>
 
-                <button class="banner-addnew-btn btn btn-success" onclick="alert('Hello world!')"><i class="fa fa-plus"
+                <button class="banner-addnew-btn btn btn-success" onclick="Banner.addSlotNewSlot" ><i class="fa fa-plus"
                                                                                                      aria-hidden="true"></i>
                     Add New
                 </button>
@@ -113,6 +117,10 @@
 
     </div>
 </div>
+
+
+
+
 <script>
     var Banner = function () {
 
@@ -130,13 +138,118 @@
         });
 
     };
-    Banner.getSingleBannerhtml = function (banner) {
+
+
+
+
+    Banner.renderTBannerItemsList = function (dataArr) {
+        let html = '';
+        for (let i = 0; i < dataArr.length; i++) {
+            let singleBannerData = dataArr[i]
+            html += Banner.getSingleBannerhtml(singleBannerData, i);
+        }
+        $('#timeslot-bottom').empty().html(html);
+    }
+
+    Banner.addHeading = '';
+    Banner.addText = '';
+    Banner.addSlotNewSlot = function () {
+        if (Banner.addHeading == '') {
+            alert("Please Add Heading");
+            return;
+        }
+        if (Banner.addText == '') {
+            alert("Please Add Text");
+            return;
+        }
+        let newSlot = {
+            "id": Banner.all-Banner.length + 1,
+            "title": Banner.addHeading,
+            "description": Banner.addText
+        }
+        Banner.all-Banner.push(newSlot);
+        Banner.addHeading = '';
+        Banner.addText = '';
+        $('#txtStartTime').val('');
+        $('#txtEndTime').val('');
+        $('#slottype-select').val('Lecture');
+        Banner.renderTBannerItemsList(Banner.mainDateArr);
+    }
+
+
+
+    Banner.openBannerEditDialog = function (elem) {
+        let allData = JSON.parse(atob($(elem).attr('data-allData')));
+        let idx = $(elem).attr('data-arr-idx');
+        let html = '';
+        html += '<div class="single-banner-edit-container">';
+        html += '    <div class="heading-container">';
+        html += '        <span>Heading</span>';
+        html += '        <input type="text">';
+        html += '    </div>';
+        html += '    <div class="summernote-container">';
+        html += '        <div class="ui input left icon">';
+        html += '            <input type="text" id="summernote-text-box" placeholder="Add Text">';
+        html += '        </div>';
+        html += '    </div>';
+        html += '</div>';
+        BootstrapDialog.show({
+            title: "Edit Banner",
+            message: html,
+            onshown: function (dialogref) {
+                $('#summernote-text-box').summernote({
+                    placeholder: 'Hello stand alone ui',
+                    tabsize: 5,
+                    height: 120,
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['view', ['fullscreen', 'codeview', 'help']]
+                    ]
+                });
+            },
+            buttons: [{
+                label: 'Close',
+                action: function (dialogRef) {
+                    dialogRef.close();
+                }
+            }, {
+                label: 'Save',
+                icon: 'glyphicon glyphicon-check',
+                cssClass: 'btn btn-success',
+                action: function (dialogRef) {
+                    if (Banner.currentlySelectedStartTime == '') {
+                        alert("Please Select Start Time");
+                        return;
+                    }
+                    if (Banner.currentlySelectedEndTime == '') {
+                        alert("Please Select End Time");
+                        return;
+                    }
+                    let newSlot = {
+                        "id": allData.id,
+                        "startTime": Banner.currentlySelectedStartTime,
+                        "endTime": Banner.currentlySelectedEndTime,
+                        "type": $('#slottype-select-edit').val()
+                    }
+                    Banner.mainDateArr[idx] = newSlot;
+                    Banner.renderTimeSlotsList(Banner.mainDateArr);
+                    dialogRef.close();
+                }
+            }]
+        });
+    }
+    Banner.getSingleBannerhtml = function (banner,idx) {
         let html = "";
         html += '<div class="single-banner-container">';
         html += '<div class="single-banner-top">';
         html += '<span class="single-banner-title">' + banner.title + '</span>';
         html += '<span class="single-banner-btns">';
-        html += '<button class="btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
+        html += '<button class="btn btn-info" data-allData="' + btoa(JSON.stringify(banner)) + '" data-arr-idx="' + idx + '" onclick="Banner.openBannerEditDialog(this)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>';
         html += '<button class="btn btn-danger" onclick="Banner.deleteBanner('+banner.id+')"><i class="fa fa-trash" aria-hidden="true"></i></button>';
         html += '</span>';
         html += '</div>';
@@ -157,4 +270,5 @@
     $(document).ready(function () {
         Banner.loadData();
     });
+
 </script>
