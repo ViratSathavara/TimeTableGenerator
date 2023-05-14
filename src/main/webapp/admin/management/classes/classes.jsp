@@ -95,10 +95,10 @@
         {"id": 7, "semester":"7","class":"AV003"}
     ]
 
-    Classes.renderClassesList = function (classDataArr) {
+    Classes.renderClassesList = function (classArr) {
         let html = '';
-        for (let i = 0; i < classDataArr; i++) {
-            let singleClassData = classDataArr[i]
+        for (let i = 0; i < classArr; i++) {
+            let singleClassData = classArr[i]
             html += Classes.getSingleClassHtml(singleClassData, i);
         }
         $('#class-bottom').empty().html(html);
@@ -127,7 +127,7 @@
         Classes.renderClassesList(Classes.mainClassArr);
     }
     Classes.deleteClass = function (elem) {
-        let id = $(elem).attr('data-slot-id');
+        let id = $(elem).attr('data-class-id');
         if (id > 0) {
             let newArr = Classes.mainClassArr.filter((elem, idx) => {
                 return elem.id != id
@@ -144,15 +144,23 @@
         Classes.currentlySelectedClass = allData.class;
         let html = '';
        html += '<div className="single-class-edit-container">';
-       html += '    <div className="semester-container">';
+       html += '     <div className="semester-container">';
        html += '        <span>Semester:</span>';
-       html += '        <input type="text" id="SelectSemester" placeholder="Select Semester">';
-       html += '    </div>';
-       html += '    <div className="class-container">';
-       html += '        <span>Class:</span>';
-       html += '        <input type="text" id="SelectClass" placeholder="Select Class">';
-       html += '    </div>';
-       html += '</div>';
+       html += '        <div class="ui calendar" id="SelectSemester">'
+        html +='             <div class="ui input left icon">';
+       html += '                <input type="text"  placeholder="Select Semester">';
+       html += '             </div>';
+       html += '        </div>';
+       html += '     </div>';
+       html += '<div className="class-container">';
+       html += '   <span>Class:</span>';
+        html +='     <div class="ui calendar" id="SelectClass">'
+        html +='       <div class="ui input left icon">';
+       html += '           <input type="text" placeholder="Select Class">';
+       html += '       </div>';
+        html +='    </div>';
+        html +='</div>';
+        html += '</div>';
         BootstrapDialog.show({
             title: "Edit Slot #" + allData.id,
             message: html,
@@ -206,11 +214,12 @@
         });
     }
 
-    Classes.getSingleClassHtml = function (data, idx) {
+    Classes.getSingleClassHtml = function (cls, idx) {
         let html = '';
-        html += '<div class="single-class-container classType-' + data.type + '">';
-        html += '   <button class="Class-edit-btn btn btn-info" data-allData="' + btoa(JSON.stringify(data)) + '" data-arr-idx="' + idx + '" onclick="Classes.openClassEditDialog(this)"></button>';
-        html += '   <button class="class-delete-btn btn btn-danger" data-class-id="' + data.id + '" onclick="Class.deleteClass(this)">';
+        html += '<div class="single-class-container classType-' + cls.type + '">';
+        html += '   <span class="timeslot-text">' + cls.startTime + ' To  ' + cls.endTime + ' ' + cls.type + '</span>';
+        html += '   <button class="Class-edit-btn btn btn-info" data-allData="' + btoa(JSON.stringify(cls)) + '" data-arr-idx="' + idx + '" onclick="Classes.openClassEditDialog(this)"></button>';
+        html += '   <button class="class-delete-btn btn btn-danger" data-class-id="' + cls.id + '" onclick="Class.deleteClass(this)">';
         html += '   </button>';
         html += '</div>';
         return html;
@@ -231,6 +240,8 @@
                 TimeSlot.currentlySelectedClass = time
             }
         });
+
         Classes.renderClassesList(Classes.mainDateArr);
+    })
 
 </script>
