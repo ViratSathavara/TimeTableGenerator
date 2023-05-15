@@ -16,7 +16,8 @@
 <script src="<%=contextPath%>/UI/libs/boostarap-dialog/bootstrap-dialog.min.js" defer></script>
 <script src="<%=contextPath%>/UI/libs/bootstrap-multiselect/bootstrap-multiselect.min.js" defer></script>
 
-<!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and mi
+nified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
 <!-- Optional theme -->
@@ -33,3 +34,5 @@
 <%--FONT AWESOME SECTION--%>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="<%=contextPath%>/UI/js/utils.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>

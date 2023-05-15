@@ -82,7 +82,6 @@ public class DBConnection implements AutoCloseable {
         for (int i = 0; i < values.length; i++) {
             ps.setObject(i+1, values[i]);
         }
-        System.out.println(ps.toString());
         return ps;
     }
 

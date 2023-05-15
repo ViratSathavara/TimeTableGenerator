@@ -90,6 +90,7 @@
     }
     $('#subject-bottom').empty().html(html);
   }
+  Subjects.getSingleClassHtml = function (){}
   Subjects.currentlySelectedSubject = '';
   Subjects.addSubjectNewSubject = function () {
     if (Subjects.currentlySelectedSubject == '') {
