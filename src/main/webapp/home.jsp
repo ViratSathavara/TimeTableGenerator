@@ -27,7 +27,7 @@
 <div class="navigation">
     <div class="left-menu">
         <div class="logo">
-            <img class="logo-img" src="./UI/images/12.png" alt="logo">
+            <a href=""> <img class="logo-img" src="./UI/images/logo.png" alt="logo"></a>
         </div>
         <div class="heading">
             <p class="title">Time Table Generator</p>

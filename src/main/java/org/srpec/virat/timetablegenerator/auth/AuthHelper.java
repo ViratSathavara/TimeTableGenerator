@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+
 public class AuthHelper {
 
     public static void invalidateSession(HttpServletRequest request, HttpServletResponse response) throws IOException {
