@@ -25,14 +25,22 @@
 }
 
 .marker {
-    border:1px solid #ff1493 !important;
-    margin:2px;
-    padding:2px;
-    text-align: center;
+
 }
 
 #main-table {
-    width: 100vw;
+    width: 90%;
+    border: 2px solid black;
+    margin-bottom: 50px;
+
+}
+
+#dynamicTable{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .navigation {
@@ -169,7 +177,8 @@ border-radius: 10px;
     justify-content: center;
     align-items: center;
     background-color: #0a58ca;
-
+    font-size: 25px;
+    text-align: center;
 }
 
 #carouselExampleIndicators .carousel-item h1 {
